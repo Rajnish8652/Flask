@@ -1,0 +1,77 @@
+
+{% block content %}
+
+    {% if Sname  %}
+        <h1>Email: {{ Email }} </h1>
+        <h1>Password:  {{ Password }} </h1>
+        <h1>Address: {{Address}}</h1>
+        <h1>Address2: {{Address2}}</h1>
+        <h1>City: {{City}}</h1>
+        <h1>State: {{State}}</h1>
+        <h1>Zip: {{Zip}}</h1>
+       
+        
+    {% else %}
+    <div>
+        <div>
+        <form method="POST">
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+                {{form.hidden_tag() }} {{form.Email.label(class="form-label")}} <br>
+                {{form.Email(class="form-control")}} 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                {{form.hidden_tag() }} {{form.Password.label(class="form-label")}} <br>
+                {{form.Password(class="form-control")}}
+            </div>
+        </div>
+
+       
+    </div>  
+    <div>
+        <div>
+            {{form.hidden_tag() }} {{form.Address.label(class="form-label")}}<br>
+             {{form.Address(class="form-control")}}
+        </div>
+        <div>
+            {{form.hidden_tag() }} {{form.Address2.label(class="form-label")}}
+            <br> {{form.Address2(class="form-control")}}
+        </div>
+    </div>
+    <div>
+        <div>
+            {{form.hidden_tag() }} {{form.City.label(class="form-label")}}
+            <br> {{form.City(class="form-control")}}
+        </div>
+        <div>
+            {{form.hidden_tag() }} {{form.State.label(class="form-label")}}
+            <br> {{form.State(class="form-control")}}
+        </div>
+    </div>
+    <div>
+        <div>
+            {{form.hidden_tag() }} {{form.Zip.label(class="form-label")}}
+            <br> {{form.Zip(class="form-control")}}
+        </div>
+            {{form.hidden_tag() }} {{form.ChekMeOut.label(class="form-label")}}
+            <br> {{form.ChekMeOut(class="form-control")}}
+        
+    </div>
+    <div>
+        <div>
+            {{form.submit(
+                class="btn btn-secondary"
+            ) }}
+        </div>
+    </div>
+        </form>
+        </div>
+    </div>
+    {% endif %}
+        
+
+{% endblock %}
