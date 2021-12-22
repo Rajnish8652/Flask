@@ -1,0 +1,39 @@
+<!--{{  users }}-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flask Application</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+{% block content %}
+<table class="table table-dark table-striped">
+    <thead>
+        <th>Id:</th>
+        <th>Name: </th>
+        <th>Email:</th>
+        <th>Password:</th>
+        <th>Delete:</th>
+        <th>Update</th>
+    </thead>
+    {% for user in users %}
+    <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <th>
+            <a href="/update/{{user.id}}">Update</a>
+        </th>
+        <th>
+            <a href="/delete/{{user.id}}">Delete</a>
+        </th>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}
+
+</body>
+</html>
+
